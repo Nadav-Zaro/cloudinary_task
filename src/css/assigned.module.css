@@ -1,0 +1,76 @@
+.assignedHolder {
+  margin-left: 18%;
+  margin-top: 5%;
+  width: 80%;
+}
+
+.assignedHolder input {
+  border: 2px inset rgba(68, 68, 223, 0.753);
+  width: 20%;
+  border-radius: 5px;
+  background-color: rgb(219, 238, 255);
+  height: 3vh;
+}
+
+.assigned {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  column-gap: 2%;
+  row-gap: 6px;
+  margin-top: 2%;
+}
+
+.tagCard {
+  width: 100%;
+  border: 2px inset rgba(68, 68, 223, 0.753);
+  border-radius: 5px;
+}
+
+.tagCard p {
+  font-size: larger;
+  font-weight: 600;
+  margin-top: 0%;
+}
+
+.taggedImgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0%;
+  border-bottom: 1.2px solid black;
+}
+
+.taggedImgs img {
+  width: 35%;
+  height: 10vh;
+}
+
+.taggedImgs p {
+  font-size: small;
+}
+
+.taggedImgs span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .assignedHolder {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .assigned {
+    grid-template-columns: repeat(3, 32%);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .assignedHolder {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .assigned {
+    grid-template-columns: repeat(2, 48%);
+  }
+}

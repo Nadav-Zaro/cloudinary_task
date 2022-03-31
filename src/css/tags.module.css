@@ -1,0 +1,119 @@
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+}
+
+.tags p {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+form {
+  margin-top: 0%;
+}
+
+form input {
+  border: 2px inset rgba(68, 68, 223, 0.753);
+  border-radius: 5px;
+  background-color: rgb(219, 238, 255);
+  margin-top: 2%;
+  height: 3vh;
+}
+
+form button {
+  border: 2px inset rgba(68, 68, 223, 0.753);
+  border-radius: 5px;
+  background-color: rgb(219, 238, 255);
+  margin-top: 2%;
+  width: 40%;
+  cursor: pointer;
+  font-weight: 550;
+  padding: 2%;
+}
+
+.tagsHolder {
+  width: 80%;
+  padding: 5%;
+  border: 2px inset rgba(68, 68, 223, 0.753);
+  margin-top: 5%;
+  border-radius: 5px;
+  background-color: rgb(219, 238, 255);
+}
+
+.tagsHolder p {
+  margin-top: 0%;
+  font-weight: 600;
+  font-size: large;
+}
+
+.tagList {
+  width: 100%;
+  height: 4vh;
+  list-style-type: none;
+  padding: 0%;
+}
+
+.tagList li {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 4px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+li span {
+  width: 30%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.editTag {
+  margin-left: 10%;
+}
+
+.editForm {
+  display: flex;
+}
+
+.editForm input {
+  width: 140%;
+}
+
+.editForm button {
+  height: 4vh;
+  padding: 0%;
+  font-size: smaller;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  .tags {
+    width: 100%;
+  }
+  form input {
+    width: 100%;
+  }
+  .tagsHolder {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .tagsHolder p {
+    position: absolute;
+    top: 0%;
+  }
+  .tagList {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .tagList {
+    width: 48%;
+  }
+}
