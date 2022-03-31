@@ -1,7 +1,7 @@
 import {useContext} from 'react'
 import { tagsContext } from "../context/TagsContext.js";
 import style from "../css/unassigned.module.css"
-import ImageComponent from './ImageComponent.jsx';
+import ImageComponent from './ImageList.jsx';
 
 export default function Unassigned() {
     const { imgs } = useContext(tagsContext);

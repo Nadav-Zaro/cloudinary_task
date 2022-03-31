@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { tagsContext } from "../context/TagsContext.js";
 import style from "../css/tags.module.css";
-import TagsComponent from "./TagsComponent.jsx";
+import TagsComponent from "./TagsList.jsx";
 
 export default function Tags() {
   const [newTag, setNewTag] = useState("");
@@ -40,7 +40,7 @@ export default function Tags() {
 
   return (
     <div className={style.tags}>
-      <p>Add tag</p>
+      <p>Your tags</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();
