@@ -2,17 +2,18 @@ import { useState, useContext } from "react";
 import { tagsContext } from "../context/TagsContext.js";
 import style from "../css/tags.module.css";
 import TagsComponent from "./TagsList.jsx";
+import randomColor from "randomcolor";
 
 export default function Tags() {
   const [newTag, setNewTag] = useState("");
   const [editedTag, setEditedTag] = useState("");
   const { tags, setTags } = useContext(tagsContext);
-  const colors = ['aqua','blue','aquamarine','crimson','cyan','orange','gold','purple','darksalmon']
+  const colors = randomColor()
   const STORAGE_KEY = "userTags"
 
   function addTag() {
     const temp = [...tags];
-    const tempTag = { name: newTag, imgs: [] ,color:colors.sort(()=>Math.random()-.5)[0]};
+    const tempTag = { name: newTag, imgs: [] ,color:colors};
     temp.push(tempTag);
     setTags(temp);
     localStorage.setItem(STORAGE_KEY,JSON.stringify(temp))
@@ -27,9 +28,14 @@ export default function Tags() {
 
   function editTag(i) {
     const temp = [...tags];
-    temp[i].name = editedTag
-    setTags(temp);
-    localStorage.setItem(STORAGE_KEY,JSON.stringify(temp))
+    if (editedTag === "") {
+      alert("You must enter tag name")
+      setTags(temp)
+    }
+    else{
+      temp[i].name = editedTag
+      setTags(temp);
+    }
   }
 
   const tagsElement = tags.map((tag, i) => (

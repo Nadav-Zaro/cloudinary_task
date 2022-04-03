@@ -5,6 +5,8 @@ import Tags from "./components/Tags";
 import Assigned from "./components/Assigned";
 import { tagsContext } from "./context/TagsContext.js";
 import axios from "axios";
+import {DndProvider} from "react-dnd"
+import {HTML5Backend} from "react-dnd-html5-backend"
 
 function App() {
   const [imgs, setImgs] = useState(null);
@@ -17,8 +19,11 @@ function App() {
 
   useEffect(() => {
     getImages();
-    getUserTags();
+    getUserTags()
   }, []);
+
+  useEffect(updateTags, [tags])
+  
 
   function getImages() {
     axios
@@ -34,7 +39,13 @@ function App() {
     return userTags ? setTags(JSON.parse(userTags)) : null;
   }
 
+  function updateTags() {
+    let temp = JSON.stringify(tags)
+    localStorage.setItem(STORAGE_KEY,temp)
+  }
+
   return (
+    <DndProvider backend={HTML5Backend}>
     <div className="App">
       <tagsContext.Provider value={{ tags, setTags, imgs, setImgs }}>
         <Tags />
@@ -42,6 +53,7 @@ function App() {
         <Assigned />
       </tagsContext.Provider>
     </div>
+    </DndProvider>
   );
 }
 

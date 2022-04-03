@@ -76,9 +76,9 @@
   cursor: pointer;
 }
 
-.cardTag li:hover {
+/* .cardTag li:hover {
   background-color: rgb(219, 238, 255);
-}
+} */
 
 ::-webkit-scrollbar {
   width: 20px;
